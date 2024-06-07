@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://automationteststore.com/');
+  await page.getByRole('link', { name: 'Login or register' }).click();
+  await page.locator('#loginFrm_loginname').click();
+  await page.locator('#loginFrm_loginname').fill('juanperez');
+  await page.locator('#loginFrm_loginname').press('Tab');
+  await page.locator('#loginFrm_password').fill('123456');
+  await page.getByRole('button', { name: ' Login' }).click();
+  await page.getByRole('link', { name: '' }).first().click();
+  await page.getByRole('link', { name: ' Back' }).click();
+  await page.getByRole('link', { name: '' }).nth(1).click();
+  await page.getByRole('link', { name: ' Continue' }).click();
+  await page.getByRole('link', { name: '' }).nth(2).click();
+  await page.getByRole('link', { name: ' Continue' }).click();
+  await page.getByRole('link', { name: '' }).nth(3).click();
+  await page.getByRole('link', { name: ' Continue' }).click();
+  await page.getByRole('link', { name: '', exact: true }).click();
+  await page.getByRole('link', { name: ' Back' }).click();
+  await page.getByRole('link', { name: '', exact: true }).click();
+  await page.getByRole('link', { name: ' Back' }).click();
+  await page.getByRole('link', { name: ' 1' }).click();
+  await page.getByRole('link', { name: ' Back' }).click();
+  await page.getByRole('link', { name: ' 0' }).click();
+  await page.getByRole('link', { name: ' Continue Shopping' }).click();
+  await page.getByRole('link', { name: 'Welcome back juan' }).click();
+  await page.getByRole('link', { name: ' 0' }).click();
+  await page.getByRole('link', { name: ' Continue' }).click();
+  await page.getByRole('link', { name: ' $' }).click();
+  await page.getByRole('link', { name: ' Continue' }).click();
+  await page.getByRole('link', { name: ' 0' }).click();
+  await page.getByRole('link', { name: ' Continue' }).click();
+  await page.getByRole('link', { name: '', exact: true }).click();
+  await page.getByRole('link', { name: ' Back' }).click();
+  await page.getByRole('link', { name: '' }).click();
+  await page.getByRole('link', { name: ' Continue' }).click();
+});
