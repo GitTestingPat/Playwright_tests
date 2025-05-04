@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+
 // Test with an email address already registered
 
 test('test', async ({ page }) => {
